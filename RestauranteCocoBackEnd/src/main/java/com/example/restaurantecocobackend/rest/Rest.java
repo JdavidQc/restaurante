@@ -42,7 +42,7 @@ public class Rest {
 
     @RequestMapping(value = "/listPedido",method = RequestMethod.POST)
     public ResponseEntity<?>  listComentarioToPlato(@RequestBody NumberDto d)
-    { return ResponseEntity.ok(cabBoletaRepor.findAllById(Collections.singleton(d.getId()))); }
+    { return ResponseEntity.ok(cabBoletaRepor.findAllByUser_Id(d.getId())); }
 
     @RequestMapping(value = "/saveReserva",method = RequestMethod.POST)
     public ResponseEntity<?>  saveReserva(@RequestBody Reserva s)
@@ -52,7 +52,7 @@ public class Rest {
     @RequestMapping(value = "/listReserva",method = RequestMethod.POST)
     public ResponseEntity<?>  listReserva(@RequestBody NumberDto d)
     {
-        return ResponseEntity.ok(reserveRepor.findAllById(Collections.singleton(d.getId())));
+        return ResponseEntity.ok(reserveRepor.findAllByUse_Id(d.getId()));
     }
 
     @RequestMapping(value = "/listComentario",method = RequestMethod.POST)
