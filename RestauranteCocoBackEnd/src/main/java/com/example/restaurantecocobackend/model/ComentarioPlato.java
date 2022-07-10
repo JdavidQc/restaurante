@@ -11,12 +11,16 @@ import java.io.Serializable;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class ComentarioPlato implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
     private  String descripcion;
+    @ManyToOne
+    @JoinColumn(name = "idPlato")
+    private  Plato plato;
     private  Integer estrella;
     private  String fecha;
     @ManyToOne
