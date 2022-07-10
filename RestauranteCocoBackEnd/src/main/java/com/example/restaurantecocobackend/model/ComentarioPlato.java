@@ -11,7 +11,7 @@ import java.io.Serializable;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Comentario implements Serializable {
+public class ComentarioPlato implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

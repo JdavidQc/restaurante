@@ -1,8 +1,6 @@
 package com.example.restaurantecocobackend.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +10,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Plato implements Serializable {
 
     @Id
@@ -21,5 +21,9 @@ public class Plato implements Serializable {
     private String descripcion;
     private double precio;
     private Integer disponibilidad;
+    private Integer  punto;
+    private Integer tipo;
+    private String foto;
+
 
 }

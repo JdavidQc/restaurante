@@ -25,5 +25,6 @@ public class CabBoleta implements Serializable {
     private  double ImporteTotal;
     private  String fechaGenerado;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "detBoleta")
+    @ToString.Exclude
     private List<DetBoleta> detBoletas = new ArrayList<>();
 }

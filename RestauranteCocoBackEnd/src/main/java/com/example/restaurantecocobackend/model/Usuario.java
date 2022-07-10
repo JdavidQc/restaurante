@@ -18,6 +18,7 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
     private  String nombre;
+    private  String puntoActual;
     private  String userName;
     private  String password;
 
