@@ -44,16 +44,6 @@ public class Rest {
     public ResponseEntity<?>  listComentarioToPlato(@RequestBody NumberDto d)
     { return ResponseEntity.ok(cabBoletaRepor.findAllByUser_Id(d.getId())); }
 
-    @RequestMapping(value = "/saveReserva",method = RequestMethod.POST)
-    public ResponseEntity<?>  saveReserva(@RequestBody Reserva s)
-    {
-        return ResponseEntity.ok(reserveRepor.save(s));
-    }
-    @RequestMapping(value = "/listReserva",method = RequestMethod.POST)
-    public ResponseEntity<?>  listReserva(@RequestBody NumberDto d)
-    {
-        return ResponseEntity.ok(reserveRepor.findAllByUse_Id(d.getId()));
-    }
 
     @RequestMapping(value = "/listComentario",method = RequestMethod.POST)
     public ResponseEntity<?>  listComentarioToPlato(@RequestBody IdDto idDto)
@@ -75,6 +65,23 @@ public class Rest {
     public ResponseEntity<?>  saveDet(@RequestBody List<DetBoleta>  detBoletaList)
     {
         return ResponseEntity.ok(detBoletaRepor.saveAll(detBoletaList));
+    }
+    @RequestMapping(value = "/saveReserva",method = RequestMethod.POST)
+    public ResponseEntity<?>  saveReserva(@RequestBody Reserva s)
+    {
+        return ResponseEntity.ok(reserveRepor.save(s));
+    }
+    @RequestMapping(value = "/listReserva",method = RequestMethod.POST)
+    public ResponseEntity<?>  listReserva(@RequestBody NumberDto d)
+    {
+        return ResponseEntity.ok(reserveRepor.findAllByUse_Id(d.getId()));
+    }
+
+    @RequestMapping(value = "/point",method = RequestMethod.POST)
+    public ResponseEntity<?>  getPoint(@RequestBody Usuario use)
+    {
+        Usuario u = usuarioRepor.findById(use.getId()).orElse(use);
+        return ResponseEntity.ok(usuarioRepor.save(u));
     }
     @RequestMapping(value = "/updatePunto",method = RequestMethod.POST)
     public ResponseEntity<?>  saveComentario(@RequestBody Usuario use)
