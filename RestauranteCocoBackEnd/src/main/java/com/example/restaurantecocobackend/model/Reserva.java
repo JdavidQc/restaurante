@@ -12,6 +12,7 @@ import javax.persistence.*;
 public class Reserva {
 
       @Id
+      @GeneratedValue(strategy = GenerationType.IDENTITY)
       private  Integer id;
       private  String direccion;
       private  String fecha;
