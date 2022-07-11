@@ -69,8 +69,6 @@ public class Rest {
     @RequestMapping(value = "/saveReserva",method = RequestMethod.POST)
     public ResponseEntity<?>  saveReserva(@RequestBody Reserva s)
     {
-
-        s.setId(reserveRepor.findAll().size()+1);
         return ResponseEntity.ok(reserveRepor.save(s));
     }
 
