@@ -76,6 +76,7 @@ public class Rest {
     {
         return ResponseEntity.ok(reserveRepor.findAllByUse_Id(d.getId()));
     }
+    /*=======================================================================================*/
 
     @RequestMapping(value = "/point",method = RequestMethod.POST)
     public ResponseEntity<?>  getPoint(@RequestBody Usuario use)
